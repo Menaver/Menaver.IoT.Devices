@@ -17,9 +17,34 @@
 
 More examples of using the IoT devices can be found in the test project [Menaver.IoT.Devices.Tests](https://github.com/Menaver/Menaver.IoT.Devices/tree/main/src/Menaver.IoT.Devices.Tests/Programs).
 
-### Obtaining Humidity & Temperature data from HDT sensor
+## Basic LED
 
 #### Scheme
+
+<img src="https://github.com/Menaver/Menaver.IoT.Devices/assets/12029392/b9fb32cd-c463-416d-9a9c-fa478ae991c9" width="480">
+
+#### Code
+```cs
+List<Led> leds = new()
+{
+    new Led(4, Color.Red, false),
+};
+
+using var ledPanel = new LedPanel(leds);
+
+ledPanel.SetAll(Color.Red);
+await Task.Delay(300);
+
+ledPanel.ResetAll();
+await Task.Delay(300);
+
+ledPanel.Toggle(4);
+```
+
+## Obtaining Humidity & Temperature data from HDT sensor
+
+#### Scheme
+
 <img src="https://github.com/Menaver/Menaver.IoT.Devices/assets/12029392/a48ca152-fc2d-48aa-86bc-21ef291892e0" width="480">
 
 #### Code
@@ -38,4 +63,36 @@ while (true)
 
     await Task.Delay(1000);
 }
+```
+
+## Matrix Keyboard 4x4
+
+#### Scheme
+
+<img src="https://github.com/Menaver/Menaver.IoT.Devices/assets/12029392/87dc0a3f-4be9-48f5-8357-aa5fd436e628" width="480">
+
+#### Code
+```cs
+    private static readonly int[] _inputs = { 18, 23, 24, 25 };
+    private static readonly int[] _outputs = { 10, 22, 27, 17 };
+
+    private static readonly char[,] _keyMap =
+    {
+        { '1', '2', '3', 'A' },
+        { '4', '5', '6', 'B' },
+        { '7', '8', '9', 'C' },
+        { '*', '0', '#', 'D' }
+    };
+
+    public static async Task<int> RunAsync()
+    {
+        using var keypad4x4 = new MatrixKeyboard(_inputs, _outputs, _keyMap);
+
+        while (true)
+        {
+            var key = await keypad4x4.ReadKeyAsync();
+
+            Console.WriteLine($"Key pressed: {key}");
+        }
+    }
 ```
