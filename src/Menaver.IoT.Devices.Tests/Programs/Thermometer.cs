@@ -6,7 +6,7 @@ internal class Thermometer
 {
     public static async Task<int> RunAsync()
     {
-        using var dht = new Dht(17, DhtDevice.Dht11);
+        using var dht = new Dht(17, DhtDevice.Dht22);
 
         Console.WriteLine("Waiting for the sensor to response...");
 

@@ -52,7 +52,7 @@ public class LedPanel : ILedPanel
             throw new ArgumentException("LED pin isn't defined.");
         }
 
-        EnablePin(led);
+        SetPinInternal(led);
     }
 
     public void SetAll(Color ledColor)
@@ -66,7 +66,7 @@ public class LedPanel : ILedPanel
 
         foreach (var led in leds)
         {
-            EnablePin(led);
+            SetPinInternal(led);
         }
     }
 
@@ -74,7 +74,7 @@ public class LedPanel : ILedPanel
     {
         foreach (var led in _leds)
         {
-            EnablePin(led);
+            SetPinInternal(led);
         }
     }
 
@@ -87,7 +87,7 @@ public class LedPanel : ILedPanel
             throw new ArgumentException("LED pin isn't defined.");
         }
 
-        DisablePin(led);
+        ResetPinInternal(led);
     }
 
     public void ResetAll(Color ledColor)
@@ -101,7 +101,7 @@ public class LedPanel : ILedPanel
 
         foreach (var led in leds)
         {
-            DisablePin(led);
+            ResetPinInternal(led);
         }
     }
 
@@ -109,7 +109,7 @@ public class LedPanel : ILedPanel
     {
         foreach (var led in _leds)
         {
-            DisablePin(led);
+            ResetPinInternal(led);
         }
     }
 
@@ -122,7 +122,7 @@ public class LedPanel : ILedPanel
             throw new ArgumentException("LED pin isn't defined.");
         }
 
-        TogglePin(led);
+        TogglePinInternal(led);
     }
 
     public void ToggleAll(Color ledColor)
@@ -136,7 +136,7 @@ public class LedPanel : ILedPanel
 
         foreach (var led in leds)
         {
-            TogglePin(led);
+            TogglePinInternal(led);
         }
     }
 
@@ -144,23 +144,23 @@ public class LedPanel : ILedPanel
     {
         foreach (var led in _leds)
         {
-            TogglePin(led);
+            TogglePinInternal(led);
         }
     }
 
-    private void EnablePin(Led led)
+    private void SetPinInternal(Led led)
     {
         _controller.Write(led.Pin, PinValue.High);
         led.Enabled = true;
     }
 
-    private void DisablePin(Led led)
+    private void ResetPinInternal(Led led)
     {
         _controller.Write(led.Pin, PinValue.Low);
         led.Enabled = false;
     }
 
-    private void TogglePin(Led led)
+    private void TogglePinInternal(Led led)
     {
         led.Enabled = !led.Enabled;
         _controller.Write(led.Pin, led.Enabled ? PinValue.High : PinValue.Low);
