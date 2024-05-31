@@ -1,0 +1,24 @@
+{
+  "profiles": {
+    "Menaver.IoT.Devices.Tests: LedBlinking": {
+      "commandName": "Project",
+      "commandLineArgs": "ledblinking"
+    },
+    "Menaver.IoT.Devices.Tests: LcDisplay": {
+      "commandName": "Project",
+      "commandLineArgs": "lcdisplay"
+    },
+    "Menaver.IoT.Devices.Tests: LcdKeypad": {
+      "commandName": "Project",
+      "commandLineArgs": "lcdkeypad"
+    },
+    "Menaver.IoT.Devices.Tests: Keypad": {
+      "commandName": "Project",
+      "commandLineArgs": "keypad"
+    },
+    "Menaver.IoT.Devices.Tests: Thermometer": {
+      "commandName": "Project",
+      "commandLineArgs": "thermo"
+    }
+  }
+}
