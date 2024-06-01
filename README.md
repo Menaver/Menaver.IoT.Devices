@@ -41,7 +41,7 @@ await Task.Delay(300);
 ledPanel.Toggle(4);
 ```
 
-## Obtaining Humidity & Temperature data from HDT sensor
+## Obtaining Humidity & Temperature data from DHT sensor
 
 #### Scheme
 
