@@ -11,7 +11,7 @@
 - 💡 [Light-emitting diode](https://en.wikipedia.org/wiki/Light-emitting_diode) (LED)
 - ⌨️ [Matrix Keyboard M×N](https://en.wikipedia.org/wiki/Keyboard_matrix_circuit) 
 - 📟 [Liquid-crystal display](https://en.wikipedia.org/wiki/Liquid-crystal_display) (LCD): PCF8574, PCF8575, PCA8574, PCA8575 
-- 🌡️ [Humidity & Temperature Sensor](https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf) (HDT): HDT11, HDT12, HDT21, HDT22 
+- 🌡️ [Humidity & Temperature Sensor](https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf) (DHT): DHT11, DHT12, DHT21, DHT22 
 
 # Examples <a name="examples"></a>
 
