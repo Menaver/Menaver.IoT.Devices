@@ -1,6 +1,6 @@
 # Overview <a name="overview"></a>
 
-.NET implementations for various IoT devices (LED, displays, keyboards, sensors, etc).
+.NET implementations that help for better interaction with various IoT devices (LED, displays, keyboards, sensors, etc).
 
 ## Keynotes
 - Platform: netstandard2.0;
